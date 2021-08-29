@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>EXERCISE 4a</title>
+<script type="text/javascript">
+
+function chkusn()
+{
+var myusn=document.getElementById("usn");	
+var pos=myusn.value.search(/^[1-4][A-Z][A-Z]\d{2}[A-Z][A-Z][A-Z]\d{2}$/);
+if(myusn.value== "") 
+{
+alert("Enter the USN.");
+return false;
+} 
+if(pos != 0) 
+{
+alert("The format of USN is not correct.");
+myusn.select();
+return false;
+} 
+else
+{
+alert("The format of the USN is VALID");
+return true;
+}
+}
+</script>
+</head>
+
+<body >
+<br />
+<h2><i> VALIDATION Of USN </i></h2>
+<br /><br />
+<form  action="">
+<p><b>USN : </b>	<input type="text" id="usn"  />
+			<br /><br /><br />
+ 		<input type="submit" id=submit value="Submit" onclick="chkusn()" />
+</p>
+</form>
+<script type="text/javascript">
+<!--
+	// set form element object properties to their corresponding
+	// event handler functions.
+
+		document.getElementById("usn").onchange=chkusn;
+//-->
+</script>
+</body>
+</html>
